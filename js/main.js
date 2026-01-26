@@ -2,7 +2,7 @@ const _app = {
   startScale: 0.55,
   endScale: 1.1,
 
-  homeScaleStart: 1.0,
+  homeScaleStart: 0.8,
   homeScaleEnd: 0.3,
 
   homeYStart: 200,
