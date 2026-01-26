@@ -1410,7 +1410,7 @@ iframe.hs-form-iframe{
 .expect-title{
   margin: 0;
   color: var(--title);
-  font-family: "Amoria", "Didot", "Bodoni Moda", serif;
+  font-family: "headerfont", ui-serif, Georgia, serif;
   font-size: clamp(64px, 6.5vw, 120px);
   line-height: .82;
   letter-spacing: .5px;
