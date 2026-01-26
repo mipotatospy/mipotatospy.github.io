@@ -2019,8 +2019,9 @@ iframe.hs-form-iframe{
 
   .half-carousel{
     /* padding: clamp(40px, 6vw, 90px) clamp(18px, 5vw, 70px); */
-    margin: auto;
+    /* margin: auto; */
     margin-top: 160px;
+    margin-inline: 100px;
   }
   
   .hc-wrap{
