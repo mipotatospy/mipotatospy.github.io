@@ -147,6 +147,9 @@
     </div>
 
     <div class="gi-tabs" role="tablist" aria-label="Get involved">
+      <button class="gi-tab" role="tab" aria-selected="false" aria-controls="gi-panel-general" id="gi-tab-general" data-target="general" data-href="/general">
+        Participate
+      </button>
       <button class="gi-tab" role="tab" aria-selected="false" aria-controls="gi-panel-producer" id="gi-tab-producer" data-target="producer" data-href="/producer">
         Become a Producer
       </button>
@@ -158,9 +161,6 @@
       </button>
       <button class="gi-tab" role="tab" aria-selected="false" aria-controls="gi-panel-press" id="gi-tab-press" data-target="press" data-href="/press">
         Press &amp; Media Inquiries
-      </button>
-      <button class="gi-tab" role="tab" aria-selected="false" aria-controls="gi-panel-general" id="gi-tab-general" data-target="general" data-href="/general">
-        Participate
       </button>
     </div>
 
@@ -247,24 +247,25 @@
 <section class="wiws-intro" id="vision" aria-label="Vision">
   <div class="wiws-wrap">
 
-    <!-- BIG BACKGROUND NUMBERS (decorative) -->
-    <div class="wiws-wm" aria-hidden="true">
-      <span class="wm-left">500+<br>producers</span>
-      <span class="wm-mid">18 women-led<br>guests</span>
-    </div>
-
-    <!-- LEFT: 2-column copy -->
     <div class="wiws-copy" aria-label="Intro text">
-      <p>
-        Wines Experience is excited to promote the Women in Wine &amp; Spirits event, hosted by Fiere Italiane.
-        Women in Wine &amp; Spirits celebrates the innovators redefining Italy’s wine and spirits heritage while
-        creating cross-border opportunities for collaboration and growth.
-      </p>
+      <div class="wiws-row">
+        <p>
+          Wines Experience is excited to promote the Women in Wine &amp; Spirits event, hosted by Fiere Italiane.
+          Women in Wine &amp; Spirits celebrates the innovators redefining Italy’s wine and spirits heritage while
+          creating cross-border opportunities for collaboration and growth.
+        </p>
 
-      <p>
-        During the weekends of our fairs there will be special on and off-site programming bringing together women
-        producers, buyers, media, and hospitality leaders for curated tastings, conversations, and networking.
-      </p>
+        <p>
+          During the weekends of our fairs there will be special on and off-site programming bringing together women
+          producers, buyers, media, and hospitality leaders for curated tastings, conversations, and networking.
+        </p>
+      </div>
+
+      <div class="wiws-wm" aria-hidden="true">
+        <span class="wm-left">500+ women-led guests</span>
+        <span class="wm-mid">18 producers</span>
+      </div>
+
     </div>
 
     <!-- RIGHT: image -->
@@ -404,7 +405,7 @@
             <h2 class="hc-place">Chicago</h2>
             <p class="hc-copy" >October 5</p>
             <p class="hc-copy">
-              2025 featured a curated roundtable, guided tasting, and networking brunch for 100 women at RPM Events
+              The 2025 Women in wine & Spirits featured a curated roundtable, guided tasting, and networking brunch for over 100 women at RPM Events. After three Chicago editions, our event has become a signature gathering for international buyers, media, and Italian producers.
             </p>
           </div>
       
@@ -550,13 +551,22 @@
 
     <form class="contact-form" action="#" method="post">
       <div class="contact-row">
-        <label class="sr-only" for="contactName">Name</label>
-        <input id="contactName" name="name" type="text" placeholder="Name" autocomplete="name" required>
+        <!-- <label class="sr-only" for="firstName">First Name</label> -->
+        <input id="firstName" name="firstname" type="text" placeholder="First Name" required>
 
-        <label class="sr-only" for="contactEmail">Email</label>
-        <input id="contactEmail" name="email" type="email" placeholder="Email" autocomplete="email" required>
+        <!-- <label class="sr-only" for="contactEmail">Last Name</label> -->
+        <input id="lastName" name="lastname" type="text" placeholder="Last Name" required>
       </div>
 
+      <div class="contact-row">
+        <!-- <label class="sr-only" for="contactName">Company</label> -->
+        <input id="company" name="company" type="text" placeholder="Company" required>
+
+        <!-- <label class="sr-only" for="contactEmail">Title</label> -->
+        <input id="title" name="title" type="text" placeholder="Title" required>
+      </div>
+
+      <input id="email" name="email" type="email" placeholder="Email" required>
       <label class="sr-only" for="contactMessage">Message</label>
       <textarea id="contactMessage" name="message" placeholder="Message" rows="6" required></textarea>
 
