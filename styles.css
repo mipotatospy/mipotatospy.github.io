@@ -1792,8 +1792,7 @@ iframe.hs-form-iframe{
   /* left: clamp(-800px, -10vw, -60px);
   bottom: clamp(-70px, -8vw, -400px); */
   line-height: .78;
-  font-family: "Amoria","Didot","Bodoni Moda",serif;
-  font-weight: 500;
+  font-family: "headerfont", ui-serif, Georgia, serif;
   font-size: clamp(90px, 10vw, 170px);
   color: var(--wm);
   pointer-events: none;
