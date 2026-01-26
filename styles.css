@@ -27,6 +27,11 @@ body{
 
 /* ---------------- HERO / GROW VIDEO ---------------- */
 
+.top_menu_link{
+  height: 40px;
+  width: auto;
+}
+
 .grow-video{
   height: 260vh;              /* keep your scroll length */
   background: var(--navBg);
