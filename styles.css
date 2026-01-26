@@ -18,7 +18,7 @@ body{
 }
 
 @font-face{
-  font-family: "headerfont", ui-serif, Georgia, serif;
+  font-family: "headerfont";
   src: url("./assets/fonts/AMORIA.woff") format("woff");
   font-weight: 400;
   font-style: normal;
