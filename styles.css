@@ -1297,8 +1297,7 @@ iframe.hs-form-iframe{
   line-height: .9;
   text-align: right;
   color: var(--wm);
-  font-family: "Amoria", "Didot", "Bodoni Moda", serif; /* swap to your title font */
-  font-weight: 500;
+  font-family: "headerfont", ui-serif, Georgia, serif;
   pointer-events: none;
   user-select: none;
 }
@@ -1337,7 +1336,7 @@ iframe.hs-form-iframe{
   left: 0;
   top: 10px;
   color: rgba(255,255,255,.22);
-  font-family: "Amoria", "Didot", serif; /* match watermark */
+  font-family: "headerfont", ui-serif, Georgia, serif;
   font-size: clamp(54px, 7vw, 86px);
   letter-spacing: 1px;
   line-height: 1;
@@ -1412,7 +1411,6 @@ iframe.hs-form-iframe{
   margin: 0;
   color: var(--title);
   font-family: "Amoria", "Didot", "Bodoni Moda", serif;
-  font-weight: 500;
   font-size: clamp(64px, 6.5vw, 120px);
   line-height: .82;
   letter-spacing: .5px;
