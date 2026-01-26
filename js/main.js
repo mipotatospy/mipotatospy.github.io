@@ -2,8 +2,8 @@ const _app = {
   startScale: 0.55,
   endScale: 1.1,
 
-  homeScaleStart: 4.0,
-  homeScaleEnd: 1.15,
+  homeScaleStart: 1.0,
+  homeScaleEnd: 0.3,
 
   homeYStart: 200,
   homeYEnd: 130,
@@ -60,6 +60,19 @@ const _app = {
     const hY =
       _app.homeYStart +
       (_app.homeYEnd - _app.homeYStart) * ease;
+
+      const logo = document.getElementById("navHomeLogo");
+
+      // whole-pixel translate to reduce blur
+      navHome.style.setProperty("--homeY", `${Math.round(hY)}px`);
+      navHome.style.setProperty("--homeScale", hScale.toFixed(3));
+      
+      // Safari repaint nudge (only when we have the img)
+      if (logo) {
+        // toggling a 3D transform forces rerasterization in Safari
+        logo.style.transform = `translateZ(0) scale(${hScale.toFixed(3)})`;
+      }
+      
 
     // Set vars on the element (works because .nav-home uses var() on itself)
     navHome.style.setProperty("--homeScale", hScale.toFixed(3));

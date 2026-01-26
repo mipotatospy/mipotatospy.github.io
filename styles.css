@@ -28,7 +28,7 @@ body{
 /* ---------------- HERO / GROW VIDEO ---------------- */
 
 .top_menu_link{
-  height: 40px;
+  height: 175px;
   width: auto;
 }
 
@@ -153,11 +153,13 @@ body{
 .nav-link:hover{ opacity: .75; }
 
 /* Floating center title (your existing behavior) */
-.nav-home{
+/* .nav-home{
   position: absolute;
   left: 50%;
   top: -120px;
   transform: translate(-50%, var(--homeY)) scale(var(--homeScale));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
   transform-origin: center top;
   text-decoration: none;
   color: #ffffff;
@@ -166,7 +168,31 @@ body{
   z-index: 1000;
   pointer-events: auto;
   will-change: transform;
+  
+} */
+
+.nav-home{
+  position:absolute;
+  left:50%;
+  top:-120px;
+
+  /* translate only */
+  transform: translate(-50%, var(--homeY));
+  transform-origin: center top;
+
+  z-index:1000;
+  will-change: transform;
 }
+
+#navHomeLogo{
+
+  transform: scale(var(--homeScale));
+  transform-origin: center top;
+
+  image-rendering: auto;
+  will-change: transform;
+}
+
 
 .nav-home-big{
   display: block;
