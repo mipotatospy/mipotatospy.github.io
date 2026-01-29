@@ -1032,6 +1032,7 @@ iframe.hs-form-iframe{
 .half-carousel{
   margin-top: 160px;
   /* margin-inline: 100px; */
+  margin-block: 40px;
 }
 
 .hc-wrap{
