@@ -2011,6 +2011,7 @@ iframe.hs-form-iframe{
 
     .half-carousel{
       margin-inline: 40px;
+      margin-block: 40px;
     }
 
     .hc-wrap{
