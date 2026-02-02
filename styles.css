@@ -7,6 +7,9 @@ html { scroll-behavior: smooth; }
 
   --homeY: 110px;
   --homeScale: 2.0;
+
+  --homeScaleStart: 0.80;
+  --homeScaleEnd:   0.30;
 }
 
 body{
@@ -254,10 +257,14 @@ body{
   filter: saturate(0) brightness(1.7);
 }
 
-.featured-producers{
+.featured-producers-desktop{
   font-weight: 300;
   font-size: 23px;
   margin-inline: 50px;
+}
+
+.featured-producers-mobile{
+  display:none;
 }
 
 .flower-deco{
@@ -1656,8 +1663,6 @@ iframe.hs-form-iframe{
   width: min(560px, 44vw);
   height: auto;
   display: block;
-
-  border-radius: 18px; 
 }
 
 .wiws-wm{
@@ -1724,6 +1729,11 @@ iframe.hs-form-iframe{
   }
 
   @media (max-width: 1024px){
+    /* :root{
+      --homeScaleStart: 0.6; 
+      --homeScaleEnd:   0.2;  
+    } */
+
     .hero-side{ display:none; }
 
     .get-involved .gi-wrap{
@@ -1800,6 +1810,18 @@ iframe.hs-form-iframe{
     }
     .mission-text{
       order: 1;
+    }
+
+    .featured-producers-desktop{
+      display: none;
+    }
+    
+    .featured-producers-mobile{
+      display: block;
+      font-weight: 300;
+      font-size: 23px;
+      margin-inline: 50px;
+      color: #7A3C7A;
     }
 
     .pe-row{
@@ -1906,14 +1928,13 @@ iframe.hs-form-iframe{
   
     .wiws-media{
       width: 100%;
-      padding: 0 18px 18px;
+      /* padding: 0 18px 18px; */
       align-self: stretch;
     }
   
     .wiws-media img{
       width: 100%;
       height: auto;
-      border-radius: 18px;
     }
 
     .wiws-wm{
@@ -1998,11 +2019,10 @@ iframe.hs-form-iframe{
   @media (max-width: 768px){
     :root{ --navH: 64px; }
     .nav-inner{ gap: 16px; }
-    .nav-home-big{ font-size: 10px; }
-    .nav-home-sub{ font-size: 14px; }
+    .nav-home-big{ font-size: 7px; }
+    .nav-home-sub{ font-size: 11px; }
 
     .nav-home{
-      display:flex;
       top:-120px;
     }
     
@@ -2048,10 +2068,7 @@ iframe.hs-form-iframe{
       height: auto;
     }
   }
-  
-  /* =========================
-     SMALL PHONES (<=480px) optional
-     ========================= */
+
   @media (max-width: 480px){
 
     .gi-modal{
@@ -2086,24 +2103,6 @@ iframe.hs-form-iframe{
     .wiws-wm .wm-mid{
       font-size: clamp(42px, 14vw, 76px);
     }
-
-    /* .hc-left{
-      display: flex;
-      padding: 50px; 
-    }
-
-  .hc-wrap.is-reversed{
-    padding-top: 0;           
-  }
-
-  .hc-wrap.is-reversed .hc-left,
-  .hc-wrap.is-reversed .hc-right{
-    grid-column: 1 / -1;      
-    grid-row: auto;           
-  }
-
-  .hc-wrap.is-reversed .hc-left{ order: 0; }
-  .hc-wrap.is-reversed .hc-right{ order: 1; } */
 
   .hc-wrap,
   .hc-wrap.is-reversed{
