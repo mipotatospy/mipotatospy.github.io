@@ -69,8 +69,8 @@ const _app = {
       
       // Safari repaint nudge (only when we have the img)
       if (logo) {
-        // toggling a 3D transform forces rerasterization in Safari
         logo.style.transform = `translateZ(0) scale(${hScale.toFixed(3)})`;
+        // logo.style.transform = `translateZ(0) scale(0.5)`;
       }
       
 
