@@ -1347,8 +1347,8 @@ iframe.hs-form-iframe{
 
 .npo-title h1{
   color:#9a609a;
-  font-family: "Amoria", "Didot", "Bodoni Moda", serif;
-  font-weight: 500;
+  font-family: "headerfont", ui-serif, Georgia, serif;  
+  /* font-weight: 500; */
   line-height: .82;
   letter-spacing: .4px;
   font-size: 65px;
