@@ -1217,10 +1217,11 @@ iframe.hs-form-iframe{
 }
 
 .life-in-rose-description{
-  flex-grow: 1;
+  display: flex;
   font-size: 24px;
   margin-left: 100px;
   text-align: right;
+  align-items: center;
 }
 
 .life-in-rose-img{
@@ -1766,7 +1767,7 @@ iframe.hs-form-iframe{
 }
 
 .zenato-description{
-  flex-grow: 1;
+  display: flex;
   font-size: 24px;
   margin-right: 100px;
   align-items: center;
