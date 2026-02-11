@@ -68,14 +68,16 @@ const _app = {
       navHome.style.setProperty("--homeScale", hScale.toFixed(3));
       
       // Safari repaint nudge (only when we have the img)
-      if (logo) {
-        logo.style.transform = `translateZ(0) scale(${hScale.toFixed(3)})`;
-        // logo.style.transform = `translateZ(0) scale(0.5)`;
+      // if (logo) {
+      //   logo.style.transform = `translateZ(0) scale(${hScale.toFixed(9)})`;
+      // }
+      const inner = navHome.querySelector('.nav-home-inner');
+      if (inner) {
+        inner.style.transform = `translateZ(0) scale(${hScale.toFixed(3)})`;
       }
-      
 
     // Set vars on the element (works because .nav-home uses var() on itself)
-    navHome.style.setProperty("--homeScale", hScale.toFixed(3));
+    navHome.style.setProperty("--homeScale", hScale.toFixed(9));
     navHome.style.setProperty("--homeY", `${hY.toFixed(1)}px`);
   },
 
@@ -456,7 +458,24 @@ const _app = {
   });
   },
 
+  isMobile() { return window.matchMedia("(max-width: 768px)").matches; },
+  applyHomeConfig() {
+    if (_app.isMobile()) {
+      _app.homeScaleStart = 0.80;
+      _app.homeScaleEnd   = 0.30;
+      _app.homeYStart     = 200;
+      _app.homeYEnd       = 130;
+    } else {
+      // 👇 put your original DESKTOP values here
+      _app.homeScaleStart = 0.55;  // example
+      _app.homeScaleEnd   = 0.20;  // example
+      _app.homeYStart     = 160;   // example
+      _app.homeYEnd       = 110;   // example
+    }
+  },
+
   main() {
+    _app.applyHomeConfig();
     _app.section = document.getElementById("growVideo");
     _app.video = _app.section?.querySelector(".vid");
     _app.navHome = document.getElementById("navHome");
@@ -466,7 +485,12 @@ const _app = {
     _app.slideInAnimation();
 
     window.addEventListener("scroll", _app.onScroll, { passive: true });
-    window.addEventListener("resize", _app.onScroll);
+    // window.addEventListener("resize", _app.onScroll);
+
+    window.addEventListener("resize", () => {
+      _app.applyHomeConfig();
+      _app.onScroll();
+    });
 
     _app.update(); // set initial state
     _app.openPopup();

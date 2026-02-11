@@ -20,6 +20,11 @@ body{
   color: #fff;
 }
 
+/* html, body {
+  overflow-x: clip;
+} */
+
+
 @font-face{
   font-family: "headerfont";
   src: url("./assets/fonts/AMORIA.woff") format("woff");
@@ -1274,18 +1279,44 @@ iframe.hs-form-iframe{
   align-items: center;
 }
 
-.nav-home{
+/* .nav-home{
   position:absolute;
   left:50%;
   top:-120px;
 
-  /* translate only */
   transform: translate(-50%, var(--homeY));
   transform-origin: center top;
 
   z-index:1000;
   will-change: transform;
+} */
+
+.nav-home{
+  position:absolute;
+  left:50%;
+  top:-95px;
+  transform: translate(-50%, var(--homeY));
+  transform-origin: center top;
+  z-index:1000;
+  will-change: transform;
+
+  /* IMPORTANT: don't force max-content on desktop */
+  width: auto;
+  max-width: none;
 }
+
+/* .nav-home-inner {
+  display: block;
+  transform-origin: center top;
+  will-change: transform;
+} */
+
+.nav-home-inner{
+  display: block;
+  transform-origin: center top;
+  will-change: transform;
+}
+
 
 .nav-inner{
   height: 100%;
@@ -1320,12 +1351,17 @@ iframe.hs-form-iframe{
   will-change: transform;
 } */
 
-#navHomeLogo{
+/* #navHomeLogo{
   transform: translateZ(0) scale(calc(var(--homeScale) * var(--homeScaleBase)));
   transform-origin: center top;
   will-change: transform;
-}
+} */
 
+#navHomeLogo {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
 
 .nav-home-sub{
   display: block;
@@ -1818,10 +1854,6 @@ iframe.hs-form-iframe{
       padding-top: clamp(40px, 7vw, 80px);
     }
   
-    /* .get-involved .gi-tabs{
-      border-top: 0;
-    }
-   */
     .get-involved .gi-tab{
       text-align: center;
     }
@@ -1846,9 +1878,10 @@ iframe.hs-form-iframe{
     .get-involved .gi-tabs{
       width: min(720px, 92vw);
       margin-inline: auto;
-      padding-left: 0;          /* you already set this */
+      padding-left: 0;         
       position: relative;
     }
+    
     .get-involved .gi-tabs::before{
       left: 0 !important;
       right: 0 !important;
@@ -2105,6 +2138,64 @@ iframe.hs-form-iframe{
       white-space: nowrap;
       transform: translateX(30px);
     }
+
+
+    .npo-banner{
+      padding: 50px;
+    }
+
+    .npo-title h1{
+      font-size: 48px;
+    }
+
+    .zenato-academy{
+      margin-top: 75px;
+      flex-direction: column;
+    }
+
+    .zenato-description{
+      display: flex;
+      font-size: 24px;
+      margin-right: 0px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+    } 
+
+    .zenato-description span{
+      font-size: 24px;
+    }
+
+    .zenato-img{
+      flex-grow: 1;
+      width: 100%;
+
+    }
+
+    .zenato-link{
+      text-decoration: underline;
+      color: #3300ff;
+    }
+
+
+    .life-in-rose{
+      flex-direction: column-reverse;
+    }
+
+    .life-in-rose-description{
+      margin-left: 0px;
+      text-align: left;
+      margin-bottom: 50px;
+    }
+
+    .life-in-rose-img{
+      width: 100%;
+    }
+
+    .lir-link{
+      text-decoration: underline;
+      color: #3300ff;
+    }
   }
   
 
@@ -2112,21 +2203,54 @@ iframe.hs-form-iframe{
     :root{ 
       --navH: 64px; 
       --homeScaleStart: 0.50;
-      --homeScaleEnd:   0.20;
-      --homeScale: 0.200;
+      --homeScaleEnd:   0.10;
+      --homeScale: 0.100;
     }
     .nav-inner{ gap: 16px; }
     .nav-home-big{ font-size: 7px; }
     .nav-home-sub{ font-size: 11px; }
 
-    .nav-home{
+    /* .nav-home{
       top:-120px;
-      transform: translate(-20%, var(--homeY));
+      
+    } */
+
+    .nav-home{
+      width: max-content;
+      max-width: 100vw;
+      top:-115px;
     }
+
+    /* .nav-home{
+      position:absolute;
+      left:50%;
+      top:-95px;
+      transform: translate(-50%, var(--homeY));
+      transform-origin: center top;
+      z-index:1000;
+      will-change: transform;
+    
+      width: auto;
+      max-width: none;
+    }
+   */
+    /* optional safety net only on mobile */
+    html, body { overflow-x: clip; }
     
     /* #navHomeLogo{
       position:static;
     } */
+
+
+    .get-involved .gi-left{
+      position: relative;
+    }
+
+    .get-involved .gi-text,
+    .get-involved .gi-involved{
+      display:block;
+      font-size: clamp(80px, 10vw, 240px);
+    }
 
     .half-carousel{
       margin-inline: 40px;
