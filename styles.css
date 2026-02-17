@@ -20,6 +20,11 @@ body{
   color: #fff;
 }
 
+body.gi-modal-open .site-nav{
+  z-index: 1;
+}
+
+
 /* html, body {
   overflow-x: clip;
 } */
@@ -691,7 +696,7 @@ body.gi-modal-open{
   position: fixed;
   inset: 0;
   display: none;
-  z-index: 9999;
+  z-index: 9999999;
 
   /* position the box a bit lower + keep safe space bottom */
   padding-top: 12vh;
@@ -708,11 +713,12 @@ body.gi-modal-open{
 
 /* dimmed background */
 .gi-modal-overlay{
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  z-index: 0;
 }
 
 /* the dialog box */
@@ -720,7 +726,7 @@ body.gi-modal-open{
   position: relative;
   z-index: 1;
 
-  width: min(760px, 100%);
+  width: 90%;
   margin: 0 auto;
 
   background: #fff;
@@ -762,7 +768,7 @@ body.gi-modal-open{
   line-height: 1;
 
   /* sits above form content */
-  z-index: 2;
+  z-index: 100;
 }
 
 .gi-modal-close:hover{
@@ -772,6 +778,7 @@ body.gi-modal-open{
 /* HubSpot container */
 .hs-form-frame{
   width: 100%;
+  z-index: 99999;
 }
 
 /* HubSpot often injects an iframe — ensure it fits */
@@ -780,6 +787,7 @@ iframe.hs-form-iframe{
   width: 100% !important;
   border: 0 !important;
   display: block;
+  z-index: 99999;
 }
 
 /* if HubSpot renders a long form, give it breathing room */
@@ -941,7 +949,7 @@ iframe.hs-form-iframe{
 }
 
 .hero-frame .vid{
-  z-index: 2;    
+  z-index: 1;    
   width: 55%;
   height: auto;
   display: block;
@@ -1710,7 +1718,7 @@ iframe.hs-form-iframe{
   
 .wiws-copy{
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
@@ -1741,7 +1749,7 @@ iframe.hs-form-iframe{
   
 .wiws-media{
   position: relative;
-  z-index: 2;
+  z-index: 1;
   margin: 0;
 
   justify-self: end;
@@ -2139,7 +2147,7 @@ iframe.hs-form-iframe{
     /* Put the text above the watermark */
     .wiws-row{
       position: relative;
-      z-index: 1;
+      z-index: 0;
     }
   
     .wiws-wm span{
@@ -2262,7 +2270,7 @@ iframe.hs-form-iframe{
     }
 
     .hero-frame .vid{
-      z-index: 2;    
+      z-index: 1;    
       width: 100%;
       height: 200%;
       /* display: block; */

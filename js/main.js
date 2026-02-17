@@ -555,7 +555,8 @@ function initMobileMenu(){
   close();
 }
 
-document.addEventListener('DOMContentLoaded', 
-  initMobileMenu,
-  _app.main()
-);
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  _app.main();
+});
+
