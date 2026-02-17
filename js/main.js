@@ -499,6 +499,8 @@ const _app = {
   },
 };
 
+
+
 function initMobileMenu(){
   console.log('initMobileMenu running');
   const header = document.getElementById('siteNav');
@@ -553,4 +555,7 @@ function initMobileMenu(){
   close();
 }
 
-document.addEventListener('DOMContentLoaded', initMobileMenu);
+document.addEventListener('DOMContentLoaded', 
+  initMobileMenu,
+  _app.main()
+);

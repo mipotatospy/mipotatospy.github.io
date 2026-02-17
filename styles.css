@@ -383,7 +383,7 @@ body{
 }
 
 .get-involved .gi-left{
-  position: absolute;
+  /* position: absolute; */
   left: clamp(-10px, -2vw, 0px);
   top: clamp(10px, 3vw, 40px);
   width: 120%;
@@ -800,25 +800,9 @@ iframe.hs-form-iframe{
 }
 
 .grow-video{
-  height: 80vh;             
   background: var(--navBg);
+  display: flex;
 }
-
-/* .grow-video .is-full .vid{
-  border-radius: 0px;
-  transition: border-radius 200ms linear;
-} */
-
-/* .grow-video .sticky{
-  position: sticky;
-  top: var(--navH);
-  height: calc(100vh - var(--navH));
-  width: 100vw;              
-  overflow: hidden;          
-  display: grid;
-  place-items: center;
-  background: var(--navBg);
-} */
 
 .gs-cities{
   position: relative;
@@ -944,32 +928,33 @@ iframe.hs-form-iframe{
 }
 
 .hero-frame{
-  position: relative;
+  /* position: relative;
   width: 100vw;              
-  height: 100%;              
-  display: grid;
-  place-items: center;
+  height: 100%;               */
+  display: flex;
+  /* place-items: center; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 150px;
+  margin-bottom: 100px;
 }
 
 .hero-frame .vid{
   z-index: 2;    
-  width: 100%;
-  height: 100%;
+  width: 55%;
+  height: auto;
   display: block;
 
   object-fit: cover;
 
   border-radius: 28px;
-
-  transform: scale(0.55);
-  transform-origin: center;
-  will-change: transform;
 }
 
 .hero-side{
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   width: clamp(160px, 16vw, 260px);
   height: auto;
 
@@ -1899,7 +1884,7 @@ iframe.hs-form-iframe{
 }
   
   @media (prefers-reduced-motion: reduce){
-    .hero-frame .vid{ transform: scale(1) !important; }
+    /* .hero-frame .vid{ transform: scale(1) !important; } */
   
     .get-involved .gi-tab,
     .get-involved .gi-panel{ transition: none !important; }
@@ -2320,24 +2305,30 @@ iframe.hs-form-iframe{
     .nav-home-big{ font-size: 10px; }
     .nav-home-sub{ font-size: 14px; }
 
+    .hero-frame{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 0px;
+      margin-bottom: 100px;
+      /* transform: translateY(100px); */
+      padding-top: 100px;
+    }
+
     .hero-frame .vid{
       z-index: 2;    
       width: 100%;
       height: 200%;
-      display: block;
+      /* display: block; */
     
       object-fit: cover;
     
       border-radius: 28px;
-    
-      transform: translateY(120px);
-      transform-origin: none;
-      will-change: none;
       border-radius: 0;
     }
 
-    .grow-video{
-      height: 50vh;             
+    .grow-video{      
       background: var(--navBg);
     }
 
@@ -2347,7 +2338,6 @@ iframe.hs-form-iframe{
       top:0px;
       z-index: 1;
     }
-
 
     html, body { overflow-x: clip; }
 
