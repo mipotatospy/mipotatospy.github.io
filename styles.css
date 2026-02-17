@@ -2224,7 +2224,8 @@ iframe.hs-form-iframe{
     .nav-inner{
       gap: 0px; 
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      /* grid-template-columns: 1fr auto 1fr; */
+      grid-template-columns: 150px 1fr 150px;
       align-items: center;
       padding: 10px;
       padding-inline: 15px;
