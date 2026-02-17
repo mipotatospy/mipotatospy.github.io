@@ -432,6 +432,15 @@ body.gi-modal-open .site-nav{
   /* padding-top: clamp(70px, 8vw, 130px); */
 }
 
+.get-involved .gi-wrap > * {
+  min-width: 0;
+}
+
+.get-involved .gi-tabs,
+.get-involved .gi-panels {
+  min-width: 0;
+}
+
 .get-involved .gi-tabs{
   display: flex;
   flex-direction: column;
@@ -527,7 +536,7 @@ body.gi-modal-open .site-nav{
   margin: 0 0 12px;
   color: rgba(255,255,255,.95);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: clamp(18px, 1vw, 14px);
+  font-size: clamp(14px, 1vw, 18px);
   line-height: 1.4;
 }
 
