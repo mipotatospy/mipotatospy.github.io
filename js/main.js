@@ -475,7 +475,7 @@ const _app = {
   },
 
   main() {
-    _app.applyHomeConfig();
+    // _app.applyHomeConfig();
     _app.section = document.getElementById("growVideo");
     _app.video = _app.section?.querySelector(".vid");
     _app.navHome = document.getElementById("navHome");
@@ -484,15 +484,14 @@ const _app = {
 
     _app.slideInAnimation();
 
-    window.addEventListener("scroll", _app.onScroll, { passive: true });
-    // window.addEventListener("resize", _app.onScroll);
+    // window.addEventListener("scroll", _app.onScroll, { passive: true });
 
-    window.addEventListener("resize", () => {
-      _app.applyHomeConfig();
-      _app.onScroll();
-    });
+    // window.addEventListener("resize", () => {
+    //   _app.applyHomeConfig();
+    //   _app.onScroll();
+    // });
 
-    _app.update(); // set initial state
+    // _app.update(); 
     _app.openPopup();
     _app.tabManager();
     _app.carouselManager();
