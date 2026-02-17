@@ -2005,7 +2005,7 @@ iframe.hs-form-iframe{
     .featured-producers-mobile{
       display: block;
       font-weight: 300;
-      font-size: 23px;
+      font-size: 18px;
       color: #7A3C7A;
     }
 
@@ -2014,7 +2014,7 @@ iframe.hs-form-iframe{
     }
 
     .pe-title{
-      font-size: 20vw;
+      font-size: 48px;
     }
 
 
@@ -2199,62 +2199,7 @@ iframe.hs-form-iframe{
     }
 
 
-    .npo-banner{
-      padding: 50px;
-    }
-
-    .npo-title h1{
-      font-size: 48px;
-    }
-
-    .zenato-academy{
-      margin-top: 75px;
-      flex-direction: column;
-    }
-
-    .zenato-description{
-      display: flex;
-      font-size: 24px;
-      margin-right: 0px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 50px;
-    } 
-
-    .zenato-description span{
-      font-size: 24px;
-    }
-
-    .zenato-img{
-      flex-grow: 1;
-      width: 100%;
-
-    }
-
-    .zenato-link{
-      text-decoration: underline;
-      color: #3300ff;
-    }
-
-
-    .life-in-rose{
-      flex-direction: column-reverse;
-    }
-
-    .life-in-rose-description{
-      margin-left: 0px;
-      text-align: left;
-      margin-bottom: 50px;
-    }
-
-    .life-in-rose-img{
-      width: 100%;
-    }
-
-    .lir-link{
-      text-decoration: underline;
-      color: #3300ff;
-    }
+ 
   }
   
 
@@ -2352,6 +2297,75 @@ iframe.hs-form-iframe{
       font-size: clamp(80px, 10vw, 240px);
     }
 
+    .wiws-wrap{
+      margin: 0 auto;
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      font-size: 1.25vw;
+    }
+
+
+    .npo-banner{
+      padding: 50px;
+    }
+
+    .npo-title h1{
+      font-size: 32px;
+    }
+
+    .zenato-academy{
+      margin-top: 45px;
+      flex-direction: column;
+    }
+
+    .zenato-description{
+      display: flex;
+      font-size: 18px;
+      margin-right: 0px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    } 
+
+    .zenato-description span{
+      font-size: 18px;
+    }
+
+    .zenato-img{
+      flex-grow: 1;
+      width: 100%;
+
+    }
+
+    .zenato-link{
+      text-decoration: underline;
+      color: #3300ff;
+    }
+
+
+    .life-in-rose{
+      flex-direction: column-reverse;
+    }
+
+    .life-in-rose-description{
+      margin-left: 0px;
+      text-align: left;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .life-in-rose-img{
+      width: 100%;
+    }
+
+    .lir-link{
+      text-decoration: underline;
+      color: #3300ff;
+    }
+
     .half-carousel{
       margin-inline: 40px;
       margin-block: 40px;
@@ -2363,6 +2377,23 @@ iframe.hs-form-iframe{
       align-items: start;
     }
 
+    .hc-title{
+      margin: 0 0 10px;
+      /* font: 700 clamp(22px, 2.4vw, 40px) ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; */
+      color: #fff;
+      font-family: "headerfont", ui-serif, Georgia, serif;
+      opacity: 20%;
+      font-size: 32px;
+      position: absolute;
+    }
+
+    .hc-copy{
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.9);
+      font: 400 clamp(18px, 1.25vw, 16px)/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width: 50ch;
+    }
+
     .hc-item{
       height: clamp(220px, 55vw, 420px);
     }
@@ -2372,6 +2403,11 @@ iframe.hs-form-iframe{
     }
 
     .contact-title{ text-align:left; }
+
+    .contact-title{
+      font-size: 48px;
+    }
+
     .contact-form{ width: min(680px, 92vw); }
     .contact-row{ grid-template-columns: 1fr; }
     .contact-flower{ right:-180px; opacity:.4; }
@@ -2388,6 +2424,17 @@ iframe.hs-form-iframe{
     .pe-video{
       width: 100%;
       height: auto;
+    }
+
+    .press-title{
+      margin: 0 0 clamp(26px, 4vw, 40px);
+      text-align: right;
+      font-family: "Amoria", "Didot", "Bodoni Moda", serif;
+      font-weight: 500;
+      line-height: .82;
+      letter-spacing: .4px;
+      color: var(--wm);
+      font-size: 48px;
     }
 
     .press-card-logo{
