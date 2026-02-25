@@ -873,6 +873,20 @@ iframe.hs-form-iframe{
   opacity: .95;
 }
 
+.gs-city-textcontent{
+  font-weight: 200;
+  font-size: clamp(14px, 1.6vw, 18px);
+  opacity: .95;
+}
+
+.gs-city-textcontent a{
+  font-weight: 500;
+  font-size: clamp(14px, 1.6vw, 18px);
+  opacity: .95;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
 /* Positioning similar to screenshot */
 .gs-city--london{ grid-column: 3 / span 4; }
 .gs-city--hcmc { grid-column: 7 / span 4; justify-self: center; }
@@ -942,6 +956,20 @@ iframe.hs-form-iframe{
   font-family: "headerfont", ui-serif, Georgia, serif;
   pointer-events: none;
   user-select: none;
+}
+
+
+.gs-city-description{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 130%;
+  transform: translateX(-130px);
+  gap: 30px;
+}
+
+.gs-city-subtitle{
+  font-weight: 600;
 }
 
 .hero-frame{
@@ -2266,6 +2294,21 @@ iframe.hs-form-iframe{
     }
     .nav-home-big{ font-size: 10px; }
     .nav-home-sub{ font-size: 14px; }
+
+    .gs-cities{
+      transform: translateY(0);
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+  
+    .gs-city-description{
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      transform: translateX(0);
+      gap: 15px;
+    }
 
     .hero-frame{
       display: flex;
