@@ -822,13 +822,13 @@ iframe.hs-form-iframe{
 }
 
 .gs-cities{
+  margin-top: 200px;
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(14px, 2vw, 26px);
   align-items: center;
-  transform: translateY(200px);
 }
 
 /* each city block: watermark code behind + white city text */
@@ -889,8 +889,8 @@ iframe.hs-form-iframe{
 
 /* Positioning similar to screenshot */
 .gs-city--london{ grid-column: 3 / span 4; }
-.gs-city--hcmc { grid-column: 7 / span 4; justify-self: center; }
-.gs-city--cdmx { grid-column: 5 / span 5; margin-top: clamp(14px, 2vw, 26px); }
+.gs-city--hcmc { grid-column: 8 / span 4;align-self: start; }
+.gs-city--cdmx { grid-column: 6 / span 5; margin-top: clamp(14px, 2vw, 26px); }
 
 
 .global-series{          
