@@ -499,7 +499,50 @@ const _app = {
   },
 };
 
+async function loadProducts() {
+  const API_URL = "https://dry-sound-a11d.micaela-8e6.workers.dev/api/products";
+  const container = document.getElementById("products-container");
 
+  if (!container) return;
+
+  container.innerHTML = "Loading products...";
+
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    const products = data.products || [];
+
+    container.innerHTML = "";
+
+    products.forEach(p => {
+      const price = (p.amount / 100).toFixed(2);
+      const currency = (p.currency || "usd").toUpperCase();
+
+      const card = document.createElement("div");
+      card.className = "stripe-product-card";
+
+      card.innerHTML = `
+        <img class="stripe-product-image" src="${p.image || ""}" alt="${p.product_name}">
+        <div class="stripe-product-text-content">
+          <h2 class="stripe-product-title">${p.product_name}</h2>
+          <p class="stripe-product-price" style="text-decoration-line: line-through;">$${price} ${currency}</p>
+          <p class="stripe-product-description">${p.product_description || ""}</p>
+          <button class="stripe-product-button" data-price="${p.price_id}" type="button" disabled>
+            SOLD OUT!
+          </button>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = "<p>Could not load products.</p>";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadProducts);
 
 function initMobileMenu(){
   console.log('initMobileMenu running');
@@ -556,7 +599,9 @@ function initMobileMenu(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  loadProducts();
   initMobileMenu();
   _app.main();
 });
+
 
