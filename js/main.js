@@ -480,7 +480,7 @@ const _app = {
     _app.video = _app.section?.querySelector(".vid");
     _app.navHome = document.getElementById("navHome");
 
-    if (!_app.section || !_app.video || !_app.navHome) return;
+    // if (!_app.section || !_app.video || !_app.navHome) return;
 
     _app.slideInAnimation();
 
@@ -542,7 +542,7 @@ async function loadProducts() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadProducts);
+// document.addEventListener("DOMContentLoaded", loadProducts);
 
 function initMobileMenu(){
   console.log('initMobileMenu running');
