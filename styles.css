@@ -1084,7 +1084,7 @@ iframe.hs-form-iframe{
 .hc-wrap{
   max-width: 1400px;
   margin: auto;
-
+  padding-top: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(22px, 4vw, 60px);
@@ -1235,7 +1235,7 @@ iframe.hs-form-iframe{
 
 .hc-wrap.is-reversed{
   grid-template-columns: 1fr 1fr;
-  padding-top: 150px;
+  
 }
 
 .hc-wrap.is-reversed .hc-right{
@@ -1563,7 +1563,6 @@ iframe.hs-form-iframe{
   font-family: "headerfont", ui-serif, Georgia, serif;
   font-size: 100px;
   opacity: 30%;
-  margin-bottom: 48px;
 }
 
 .past-featured-producers{
