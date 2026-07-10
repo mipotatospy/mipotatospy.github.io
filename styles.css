@@ -2534,6 +2534,34 @@ iframe.hs-form-iframe{
       text-decoration: underline;
       color: #3300ff;
     }
+
+    .drinks-united{
+      margin-top: 45px;
+      flex-direction: column;
+    }
+  
+    .drinks-united-description{
+      display: flex;
+      font-size: 18px;
+      margin-right: 0px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    } 
+  
+    .drinks-united-description span{
+      font-size: 18px;
+    }
+  
+    .drinks-united-img{
+      flex-grow: 1;
+      width: 100%;
+    }
+  
+    .zenato-link{
+      text-decoration: underline;
+      color: #3300ff;
+    }
   
     /* =========================
        HALF CAROUSELS — MOBILE FIX
