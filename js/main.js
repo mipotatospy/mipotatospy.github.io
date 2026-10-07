@@ -572,31 +572,46 @@ async function loadProducts() {
 // document.addEventListener("DOMContentLoaded", loadProducts);
 
 function initMobileMenu(){
-  console.log('initMobileMenu running');
   const header = document.getElementById('siteNav');
   const btn = document.querySelector('.nav-burger');
   const menu = document.getElementById('mobileMenu');
   if(!header || !btn || !menu) return;
 
+  const links = [...menu.querySelectorAll('a')];
+  let previouslyFocused = null;
+
+  links.forEach((link) => {
+    const linkPath = new URL(link.href, window.location.href).pathname.replace(/index\.html$/, '');
+    const pagePath = window.location.pathname.replace(/index\.html$/, '');
+    if (linkPath === pagePath) link.setAttribute('aria-current', 'page');
+  });
+
   function open(){
+    previouslyFocused = document.activeElement;
     header.classList.add('is-menu-open');
-    menu.hidden = false; // ✅ IMPORTANT
+    menu.hidden = false;
     btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
     document.body.classList.add('menu-open');
+    requestAnimationFrame(() => {
+      (menu.querySelector('[aria-current="page"]') || links[0])?.focus();
+    });
   }
 
-  function close(){
+  function close({ returnFocus = false } = {}){
     header.classList.remove('is-menu-open');
-    menu.hidden = true; // ✅ IMPORTANT
+    menu.hidden = true;
     btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
     document.body.classList.remove('menu-open');
+    if (returnFocus && previouslyFocused instanceof HTMLElement) previouslyFocused.focus();
   }
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
     const expanded = btn.getAttribute('aria-expanded') === 'true';
-    expanded ? close() : open();
+    expanded ? close({ returnFocus: true }) : open();
   });
 
   // close when tapping a link
@@ -613,7 +628,25 @@ function initMobileMenu(){
 
   // close on ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
+    if (menu.hidden) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close({ returnFocus: true });
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusable = [btn, ...links];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   // close on resize to desktop
