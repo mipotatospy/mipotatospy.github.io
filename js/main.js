@@ -379,6 +379,11 @@ const _app = {
     if (!viewport || !track || !prev || !next) return;
 
     const items = Array.from(track.children);
+    const counter = document.createElement('div');
+    counter.className = 'hc-counter';
+    counter.setAttribute('aria-live', 'polite');
+    counter.setAttribute('aria-atomic', 'true');
+    root.appendChild(counter);
 
     const step = () => {
       const first = items[0];
@@ -391,6 +396,12 @@ const _app = {
       const maxScroll = viewport.scrollWidth - viewport.clientWidth - 1;
       prev.disabled = viewport.scrollLeft <= 0;
       next.disabled = viewport.scrollLeft >= maxScroll;
+    }
+
+    function setGalleryState(){
+      const current = Math.max(0, Math.min(items.length - 1, Math.round(viewport.scrollLeft / step())));
+      items.forEach((item, index) => item.classList.toggle('is-current', index === current));
+      counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
     }
 
     prev.addEventListener('click', () => {
@@ -428,6 +439,7 @@ const _app = {
       down = false;
       viewport.style.scrollBehavior = 'smooth';
       setButtons();
+      setGalleryState();
     }
 
     viewport.addEventListener('pointerup', end);
@@ -449,12 +461,17 @@ const _app = {
       raf = requestAnimationFrame(() => {
         raf = null;
         setButtons();
+        setGalleryState();
       });
     });
 
     // init
     setButtons();
-    window.addEventListener('resize', setButtons);
+    setGalleryState();
+    window.addEventListener('resize', () => {
+      setButtons();
+      setGalleryState();
+    });
   });
   },
 
@@ -505,7 +522,8 @@ async function loadProducts() {
 
   if (!container) return;
 
-  container.innerHTML = "Loading products...";
+  container.setAttribute("aria-busy", "true");
+  container.innerHTML = '<p class="shop-status">Loading products…</p>';
 
   try {
     const res = await fetch(API_URL);
@@ -513,6 +531,12 @@ async function loadProducts() {
     const products = data.products || [];
 
     container.innerHTML = "";
+
+    if (!products.length) {
+      container.setAttribute("aria-busy", "false");
+      container.innerHTML = '<p class="shop-status">No products are currently available.</p>';
+      return;
+    }
 
     products.forEach(p => {
       const price = (p.amount / 100).toFixed(2);
@@ -525,7 +549,7 @@ async function loadProducts() {
         <img class="stripe-product-image" src="${p.image || ""}" alt="${p.product_name}">
         <div class="stripe-product-text-content">
           <h2 class="stripe-product-title">${p.product_name}</h2>
-          <p class="stripe-product-price" style="text-decoration-line: line-through;">$${price} ${currency}</p>
+          <p class="stripe-product-price">$${price} ${currency}</p>
           <p class="stripe-product-description">${p.product_description || ""}</p>
           <button class="stripe-product-button" data-price="${p.price_id}" type="button" disabled>
             SOLD OUT!
@@ -536,9 +560,12 @@ async function loadProducts() {
       container.appendChild(card);
     });
 
+    container.setAttribute("aria-busy", "false");
+
   } catch (err) {
     console.error(err);
-    container.innerHTML = "<p>Could not load products.</p>";
+    container.setAttribute("aria-busy", "false");
+    container.innerHTML = '<p class="shop-status shop-status--error">Products could not be loaded. Please try again later.</p>';
   }
 }
 
@@ -598,10 +625,263 @@ function initMobileMenu(){
   close();
 }
 
+function initSocialRail() {
+  if (document.querySelector('.social-rail')) return;
+
+  const rail = document.createElement('nav');
+  rail.className = 'social-rail';
+  rail.setAttribute('aria-label', 'Social media');
+  rail.innerHTML = `
+    <a href="https://www.instagram.com/womeninwineandspiritsglobal?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Women in Wine and Spirits on Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/company/womeninwineandspirits/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="Women in Wine and Spirits on LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.34 3.5A2.34 2.34 0 1 1 .66 3.5a2.34 2.34 0 0 1 4.68 0ZM.95 7h4.78v15H.95V7Zm7.69 0h4.58v2.05h.07c.63-1.21 2.2-2.49 4.52-2.49 4.84 0 5.74 3.19 5.74 7.34V22h-4.77v-7.18c0-1.71-.04-3.92-2.39-3.92-2.39 0-2.76 1.87-2.76 3.79V22H8.64V7Z"/></svg>
+    </a>`;
+  document.body.appendChild(rail);
+}
+
+function initProducerDialogs() {
+  const triggers = document.querySelectorAll('.producer-card__trigger[aria-controls]');
+  if (!triggers.length) return;
+
+  let returnFocusTo = null;
+
+  const closeDialog = dialog => {
+    if (dialog?.open) dialog.close();
+  };
+
+  triggers.forEach(trigger => {
+    const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!(dialog instanceof HTMLDialogElement)) return;
+
+    trigger.addEventListener('click', () => {
+      returnFocusTo = trigger;
+      dialog.showModal();
+      document.body.classList.add('producer-modal-open');
+    });
+
+    dialog.querySelectorAll('[data-producer-close]').forEach(button => {
+      button.addEventListener('click', () => closeDialog(dialog));
+    });
+
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) closeDialog(dialog);
+    });
+
+    dialog.addEventListener('close', () => {
+      document.body.classList.remove('producer-modal-open');
+      if (returnFocusTo instanceof HTMLElement) returnFocusTo.focus();
+      returnFocusTo = null;
+    });
+  });
+}
+
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!(form instanceof HTMLFormElement)) return;
+
+  const submitButton = form.querySelector('[data-contact-submit]');
+  const status = form.querySelector('[data-contact-status]');
+  if (!(submitButton instanceof HTMLButtonElement) || !(status instanceof HTMLElement)) return;
+
+  const setStatus = (message, type = '') => {
+    status.textContent = message;
+    status.classList.toggle('is-success', type === 'success');
+    status.classList.toggle('is-error', type === 'error');
+  };
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.reportValidity() || submitButton.disabled) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+    setStatus('Sending your message…');
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) throw new Error(`Formspree returned ${response.status}`);
+
+      form.reset();
+      setStatus('Thank you. Your message has been sent successfully.', 'success');
+      cookieConsent.track('contact_form_submit', { form_name: 'homepage_contact' });
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setStatus('Your message could not be sent. Please try again or email info@womeninwineandspirit.com.', 'error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send';
+    }
+  });
+}
+
+const cookieConsent = {
+  key: 'wiws-cookie-consent',
+  policyVersion: '1.0',
+  measurementId: 'G-EGB87WD7LM',
+  previousFocus: null,
+
+  read() {
+    try {
+      const value = JSON.parse(localStorage.getItem(this.key));
+      if (!value || value.policyVersion !== this.policyVersion) return null;
+      return value;
+    } catch {
+      return null;
+    }
+  },
+
+  write(analytics) {
+    const value = {
+      analytics: Boolean(analytics),
+      timestamp: new Date().toISOString(),
+      policyVersion: this.policyVersion
+    };
+    localStorage.setItem(this.key, JSON.stringify(value));
+    return value;
+  },
+
+  loadAnalytics() {
+    if (document.querySelector('[data-google-analytics]')) return;
+
+    window[`ga-disable-${this.measurementId}`] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', this.measurementId, {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
+    script.dataset.googleAnalytics = 'true';
+    document.head.appendChild(script);
+  },
+
+  deleteAnalyticsCookies() {
+    window[`ga-disable-${this.measurementId}`] = true;
+    const cookieNames = document.cookie
+      .split(';')
+      .map(cookie => cookie.split('=')[0].trim())
+      .filter(name => name === '_ga' || name.startsWith('_ga_'));
+    const hostParts = window.location.hostname.split('.');
+    const domains = ['', window.location.hostname];
+
+    if (hostParts.length > 1) domains.push(`.${hostParts.slice(-2).join('.')}`);
+
+    cookieNames.forEach(name => {
+      domains.forEach(domain => {
+        const domainPart = domain ? `; domain=${domain}` : '';
+        document.cookie = `${name}=; Max-Age=0; path=/${domainPart}; SameSite=Lax`;
+      });
+    });
+  },
+
+  track(eventName, parameters = {}) {
+    if (!this.read()?.analytics || typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, parameters);
+  },
+
+  init() {
+    const banner = document.getElementById('cookieBanner');
+    const modal = document.getElementById('cookieModal');
+    const analyticsToggle = document.getElementById('analyticsConsent');
+    if (!banner || !modal || !analyticsToggle) return;
+
+    const openSettings = () => {
+      this.previousFocus = document.activeElement;
+      analyticsToggle.checked = Boolean(this.read()?.analytics);
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('cookie-modal-open');
+      analyticsToggle.focus();
+    };
+
+    const closeSettings = () => {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('cookie-modal-open');
+      if (this.previousFocus instanceof HTMLElement) this.previousFocus.focus();
+    };
+
+    const applyChoice = (analytics) => {
+      const previouslyAllowed = Boolean(this.read()?.analytics);
+      this.write(analytics);
+      banner.hidden = true;
+      closeSettings();
+
+      if (analytics) {
+        this.loadAnalytics();
+      } else {
+        this.deleteAnalyticsCookies();
+        if (previouslyAllowed) window.location.reload();
+      }
+    };
+
+    document.querySelectorAll('[data-cookie-accept]').forEach(button => {
+      button.addEventListener('click', () => applyChoice(true));
+    });
+    document.querySelectorAll('[data-cookie-reject]').forEach(button => {
+      button.addEventListener('click', () => applyChoice(false));
+    });
+    document.querySelectorAll('[data-cookie-manage], [data-cookie-settings]').forEach(button => {
+      button.addEventListener('click', openSettings);
+    });
+    document.querySelectorAll('[data-cookie-close]').forEach(button => {
+      button.addEventListener('click', closeSettings);
+    });
+    document.querySelector('[data-cookie-save]')?.addEventListener('click', () => {
+      applyChoice(analyticsToggle.checked);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !modal.hidden) closeSettings();
+    });
+
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin) {
+        this.track('outbound_link_click', {
+          link_url: url.href,
+          link_text: link.textContent.trim().slice(0, 100)
+        });
+      }
+    });
+
+    document.addEventListener('click', event => {
+      const trigger = event.target.closest('[data-modal]');
+      if (!trigger) return;
+      this.track('participation_form_open', {
+        form_name: trigger.getAttribute('data-modal')
+      });
+    });
+
+    const saved = this.read();
+    if (!saved) {
+      banner.hidden = false;
+    } else if (saved.analytics) {
+      this.loadAnalytics();
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  cookieConsent.init();
   loadProducts();
   initMobileMenu();
+  initSocialRail();
+  initProducerDialogs();
+  initContactForm();
   _app.main();
 });
-
-
