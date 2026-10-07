@@ -5019,6 +5019,10 @@ iframe.hs-form-iframe{
   gap: 10px;
 }
 
+.producer-modal__companies a{
+  color: #6f376f;
+}
+
 .producer-modal__socials{
   display: flex;
   margin: -12px 0 28px;
