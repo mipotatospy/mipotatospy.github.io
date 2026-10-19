@@ -447,5 +447,252 @@
     "imageAlt": "Portrait of Cecilia Paltrinieri",
     "sortOrder": 21,
     "published": true
+  },
+  {
+    "id": "molly-matelski",
+    "displayName": "Molly Matelski",
+    "companies": [
+      {
+        "name": "Mmmm...Enjoy.",
+        "url": "https://www.enjoymmmm.com/"
+      }
+    ],
+    "linkedInUrl": "https://www.linkedin.com/in/molly-matelski-a481501b",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "molly@EnjoyMMMM.com",
+    "personalBio": "Molly Matelski is a hospitality professional and entrepreneur who co-founded Mmmm...Enjoy. in Chicago in 2022. Drawing on her hospitality background and professional work connecting the international wine and food industry, she helped create a women-owned brand designed to make premium Italian wine more approachable, colorful and enjoyable.",
+    "companyBio": "Mmmm...Enjoy. is a Chicago-based, women-owned wine brand launched in 2022. It offers premium Italian wines with an accessible, unpretentious identity and works with artists, musicians and other businesses to create community-focused experiences.",
+    "generalBio": "Molly Matelski is a hospitality professional and co-founder of Mmmm...Enjoy., a Chicago-based, women-owned brand offering premium Italian wines through an approachable and colorful identity. Her broader work connects international wine, food and hospitality communities through programming, partnerships and events.",
+    "imagePath": "assets/producers/molly-matelski.webp",
+    "imageAlt": "Portrait of Molly Matelski",
+    "sortOrder": 22,
+    "published": true
+  },
+  {
+    "id": "chrishon-lampley",
+    "displayName": "Chrishon Lampley",
+    "companies": [
+      {
+        "name": "Love Cork Screw",
+        "url": "https://lovecorkscrew.com/"
+      },
+      {
+        "name": "Sip & Empower Foundation",
+        "url": "https://sipandempower.org/"
+      }
+    ],
+    "linkedInUrl": "https://www.linkedin.com/in/chrishon-lampley-a4543596",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Chrishon Lampley is an entrepreneur, négociant and educator who founded Love Cork Screw after first building it as an accessible wine-focused blog. She later co-founded the Sip & Empower Foundation and its CLINK & SIP Festival, creating opportunities for diverse founders across wine, spirits, food and hospitality.",
+    "companyBio": "Love Cork Screw is a nationally distributed wine portfolio founded by Chrishon Lampley. The brand grew from an accessible wine blog into a business with more than two million bottles sold and placement in over one thousand retail locations.",
+    "generalBio": "Chrishon Lampley is the founder of Love Cork Screw and a co-founder of the Sip & Empower Foundation and CLINK & SIP Festival. Through her wine portfolio, education and community initiatives, she works to expand visibility and opportunity for diverse entrepreneurs in wine and hospitality.",
+    "imagePath": "assets/producers/chrishon-lampley.webp",
+    "imageAlt": "Portrait of Chrishon Lampley",
+    "sortOrder": 23,
+    "published": true
+  },
+  {
+    "id": "julie-geils",
+    "displayName": "Julie Geils",
+    "companies": [
+      {
+        "name": "Bellissimo Chicago",
+        "url": ""
+      }
+    ],
+    "linkedInUrl": "https://www.linkedin.com/in/julie-geils-655676298",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Julie Geils is the founder and owner of Bellissimo Chicago, a small-batch producer of Italian-inspired liqueurs. She launched the company with its signature limoncello and expanded its range to include arancello and coffee liqueur, growing distribution across multiple U.S. states.",
+    "companyBio": "Bellissimo Chicago produces small-batch Italian-inspired liqueurs, including limoncello, arancello and coffee liqueur. The company has expanded from its original signature product into a broader range available through retail and hospitality locations.",
+    "generalBio": "Julie Geils is the founder and owner of Bellissimo Chicago, where she produces small-batch, Italian-inspired liqueurs. Beginning with a signature limoncello, she expanded the company’s portfolio and distribution while retaining its focus on craft production.",
+    "imagePath": "assets/producers/julie-geils.webp",
+    "imageAlt": "Portrait of Julie Geils",
+    "sortOrder": 24,
+    "published": true
+  },
+  {
+    "id": "lydia-richards",
+    "displayName": "Lydia Richards",
+    "companies": [
+      {
+        "name": "Hispanics in Wine & Spirits",
+        "url": ""
+      },
+      {
+        "name": "Vino Concierge",
+        "url": "https://www.vinoconcierge.wine/"
+      }
+    ],
+    "linkedInUrl": "https://www.linkedin.com/in/lydia-richards/",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Lydia Richards is a Panama-born wine professional, entrepreneur and industry advocate. A certified sommelier with WSET Level 3 credentials, she founded Vino Concierge in 2017 and co-founded Hispanics in Wine & Spirits to strengthen Latine representation through mentorship, advocacy and community-building.",
+    "companyBio": "Hispanics in Wine & Spirits is a nonprofit organization dedicated to increasing Hispanic and Latine representation across the beverage and hospitality industries. Its work includes mentorship, advocacy, education and community programming.",
+    "generalBio": "Lydia Richards is a Panama-born wine professional, educator and entrepreneur who founded Vino Concierge and co-founded Hispanics in Wine & Spirits. Her work makes wine education more accessible while supporting visibility, mentorship and professional opportunities for Black and Latine communities.",
+    "imagePath": "assets/producers/lydia-richards.webp",
+    "imageAlt": "Portrait of Lydia Richards",
+    "sortOrder": 25,
+    "published": true
+  },
+  {
+    "id": "joyce-dawkins",
+    "displayName": "Joyce Dawkins",
+    "companies": [
+      {
+        "name": "She ROCKS It",
+        "url": ""
+      },
+      {
+        "name": "Sip & Empower Foundation",
+        "url": "https://sipandempower.org/"
+      }
+    ],
+    "linkedInUrl": "",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Joyce Dawkins is the founder of S.H.E. Inc. and She ROCKS It, initiatives that celebrate, connect and empower women and entrepreneurs. She co-founded the Sip & Empower Foundation with Chrishon Lampley and helped create the CLINK & SIP Festival as a platform for diverse makers.",
+    "companyBio": "She ROCKS It creates platforms and experiences that celebrate and empower women. The Sip & Empower Foundation is a Chicago nonprofit that supports diverse entrepreneurs in wine, spirits, food and hospitality, with CLINK & SIP serving as its signature annual fundraiser.",
+    "generalBio": "Joyce Dawkins is the founder of S.H.E. Inc. and She ROCKS It and a co-founder of the Sip & Empower Foundation. Through community platforms and the CLINK & SIP Festival, she creates opportunities that connect and celebrate women, entrepreneurs and diverse makers.",
+    "imagePath": "assets/producers/joyce-dawkins.webp",
+    "imageAlt": "Portrait of Joyce Dawkins",
+    "sortOrder": 26,
+    "published": true
+  },
+  {
+    "id": "diva-moretti-polegato",
+    "displayName": "Diva Moretti Polegato",
+    "companies": [
+      {
+        "name": "Villa Sandi",
+        "url": "https://www.villasandi.it/"
+      }
+    ],
+    "linkedInUrl": "https://uk.linkedin.com/in/diva-maddalena-moretti-polegato-1a1b31145",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Diva Moretti Polegato is Vice President and a member of the Board of Directors of Villa Sandi, representing the fourth generation of her family’s wine business. After working as a brand ambassador and area manager across the United States, United Kingdom and Mexico, she now focuses on international growth and the winery’s positioning in strategic markets.",
+    "companyBio": "Villa Sandi is a family-owned winery based in Veneto and housed in a seventeenth-century Palladian villa. The Moretti Polegato family has led the estate since 1975, developing an international portfolio centred on Prosecco alongside a commitment to sustainability, hospitality and wine tourism.",
+    "generalBio": "Diva Moretti Polegato is Vice President of Villa Sandi and a fourth-generation member of the Moretti Polegato family. Building on international experience across the United States, United Kingdom and Mexico, she helps guide the historic Veneto winery’s global development and brand strategy.",
+    "imagePath": "assets/producers/diva-moretti-polegato.webp",
+    "imageAlt": "Portrait of Diva Moretti Polegato",
+    "sortOrder": 27,
+    "published": true
+  },
+  {
+    "id": "martina-paladin",
+    "displayName": "Martina Paladin",
+    "companies": [
+      {
+        "name": "Casa Paladin",
+        "url": "https://www.casapaladin.it/"
+      }
+    ],
+    "linkedInUrl": "https://it.linkedin.com/in/martina-paladin",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "casa@casapaladin.it",
+    "personalBio": "Martina Paladin represents the third generation of Casa Paladin, the wine group founded by her grandfather, Valentino Paladin. Working alongside her cousin Francesca, she oversees international export and marketing activities, including markets in Asia, while contributing to the family’s sustainability and innovation work.",
+    "companyBio": "Casa Paladin is a family wine group founded in 1962, bringing together estates across Veneto, Friuli, Lombardy and Tuscany. Its portfolio combines distinct regional identities with shared commitments to careful viticulture, sustainability and the long-term stewardship of a multigenerational family business.",
+    "generalBio": "Martina Paladin is a third-generation member of Casa Paladin and works across international export and marketing for the family’s estates. Alongside her cousin Francesca, she brings the group’s regional wines and sustainability commitments to global markets.",
+    "imagePath": "assets/producers/martina-paladin.webp",
+    "imageAlt": "Portrait of Martina Paladin",
+    "sortOrder": 28,
+    "published": true
+  },
+  {
+    "id": "karla-correa",
+    "displayName": "Karla Correa",
+    "companies": [
+      {
+        "name": "Piscis",
+        "url": ""
+      },
+      {
+        "name": "Vino y Se Fue",
+        "url": ""
+      }
+    ],
+    "linkedInUrl": "https://mx.linkedin.com/in/karla-correa-bedolla-35426458",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "karla@vinoysefue.mx",
+    "personalBio": "Karla Correa is a sommelier, commercial director and partner at the wine importer and distributor Vino y Se Fue. She also co-created Piscis, a limited-production Mexican white wine project, contributing her commercial expertise to a collaboration built around an approachable wine for sharing with food and friends.",
+    "companyBio": "Piscis is a Mexican white wine project created by Karla Correa, Israel González and Emiliano Pérez Salas, with winemaking by Agostina Astegiano. Vino y Se Fue is a Mexico City importer and distributor whose activities include wine importation, distribution and production.",
+    "generalBio": "Karla Correa is a sommelier and commercial director and partner at Vino y Se Fue. She also co-created Piscis, bringing her commercial experience to a collaborative Mexican wine project conceived as an approachable bottle for social occasions.",
+    "imagePath": "assets/producers/karla-correa.webp",
+    "imageAlt": "Portrait of Karla Correa",
+    "sortOrder": 29,
+    "published": true
+  },
+  {
+    "id": "cristina-pino-villar",
+    "displayName": "Dr. Cristina Piño Villar",
+    "companies": [
+      {
+        "name": "Piño Villar",
+        "url": ""
+      }
+    ],
+    "linkedInUrl": "",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Dr. Cristina Piño Villar is a Spanish-trained winemaker active in Mexico’s wine industry. Her technical background includes research into vineyard irrigation and grape phenolic maturity, and she has held senior winemaking roles in Baja California, including at Monte Xanic and Bodegas de Santo Tomás.",
+    "companyBio": "",
+    "generalBio": "Dr. Cristina Piño Villar is a winemaker with an academic and technical background in viticulture and oenology. Working in Mexico’s wine sector, she has contributed to winemaking in Baja California and participated in national and international technical work related to wine production.",
+    "imagePath": "assets/producers/cristina-pino-villar.webp",
+    "imageAlt": "Portrait of Dr. Cristina Piño Villar",
+    "sortOrder": 30,
+    "published": true
+  },
+  {
+    "id": "isabella-paoloni",
+    "displayName": "Isabella Paoloni",
+    "companies": [
+      {
+        "name": "Vinos Paoloni",
+        "url": ""
+      }
+    ],
+    "linkedInUrl": "",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "",
+    "companyBio": "",
+    "generalBio": "",
+    "imagePath": "",
+    "imageAlt": "",
+    "sortOrder": 31,
+    "published": false
+  },
+  {
+    "id": "diana-paoloni",
+    "displayName": "Diana Paoloni",
+    "companies": [
+      {
+        "name": "Vinos Paoloni",
+        "url": "https://www.villamontefiori.mx/"
+      }
+    ],
+    "linkedInUrl": "",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "Diana Paoloni is a winemaker associated with Vinos Paoloni and Villa Montefiori in Valle de Guadalupe. She is the daughter of founder Paolo Paoloni, who brought his Italian viticultural background to Mexico and established the family estate in Baja California.",
+    "companyBio": "Vinos Paoloni is produced at Villa Montefiori in Valle de Guadalupe. Founded by Italian agronomist and oenologist Paolo Paoloni, the estate works with Italian and French grape varieties and combines an Italian winemaking heritage with Baja California’s growing conditions.",
+    "generalBio": "Diana Paoloni is a winemaker with Vinos Paoloni at her family’s Villa Montefiori estate in Valle de Guadalupe. As the daughter of founder Paolo Paoloni, she represents the next generation of a project that brings Italian winemaking traditions into the landscape of Baja California.",
+    "imagePath": "",
+    "imageAlt": "",
+    "sortOrder": 32,
+    "published": false
   }
 ]

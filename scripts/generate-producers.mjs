@@ -206,14 +206,14 @@ ${record.companies.map(company => company.url
           ${socialLinks}
         </nav>`
     : '';
+  const socialSection = socials ? `        ${socials}\n` : '';
 
   return `    <dialog class="producer-modal" id="producer-${escapeHtml(record.id)}" aria-labelledby="producer-${escapeHtml(record.id)}-title">
       <div class="producer-modal__panel">
         <button class="producer-modal__close" type="button" data-producer-close aria-label="Close ${escapeHtml(record.displayName)} profile">×</button>
         <h2 id="producer-${escapeHtml(record.id)}-title">${escapeHtml(record.displayName)}</h2>
         ${companies}
-        ${socials}
-        ${biography}
+${socialSection}        ${biography}
       </div>
     </dialog>`;
 }).join('\n');
