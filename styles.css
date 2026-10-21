@@ -863,7 +863,7 @@ h3,
 .footer-partners__logos{
   display: flex;
   align-items: center;
-  max-width: 370px;
+  max-width: 520px;
   margin-left: auto;
   justify-content: flex-end;
   gap: 12px;
@@ -894,6 +894,10 @@ h3,
 .footer-partners__logos a:nth-child(2) img{
   max-width: min(160px, 18vw);
   filter: brightness(0) invert(1);
+}
+
+.footer-partners__logos a:nth-child(3) img{
+  max-width: min(145px, 16vw);
 }
 
 .social-rail{
@@ -5108,7 +5112,7 @@ body.producer-modal-open{
   }
 
   .footer-partners__logos{
-    max-width: 330px;
+    max-width: 100%;
     margin-left: 0;
     justify-content: flex-start;
   }
@@ -5119,6 +5123,10 @@ body.producer-modal-open{
 
   .footer-partners__logos a:nth-child(2) img{
     max-width: min(145px, 42vw);
+  }
+
+  .footer-partners__logos a:nth-child(3) img{
+    max-width: min(130px, 38vw);
   }
 }
 
