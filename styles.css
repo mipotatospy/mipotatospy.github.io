@@ -4950,7 +4950,7 @@ iframe.hs-form-iframe{
 }
 
 .producer-modal{
-  width: min(720px, calc(100vw - 40px));
+  width: min(980px, calc(100vw - 40px));
   max-width: none;
   max-height: calc(100dvh - 40px);
   padding: 0;
@@ -4968,12 +4968,48 @@ iframe.hs-form-iframe{
 .producer-modal__panel{
   position: relative;
   max-height: calc(100dvh - 40px);
-  padding: clamp(32px, 5vw, 56px);
   overflow-y: auto;
   background: #fbf8fb;
   border: 1px solid rgba(122,60,122,.14);
   border-radius: 28px;
   box-shadow: 0 30px 90px rgba(35,14,35,.35);
+}
+
+.producer-modal__layout{
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+  min-height: min(640px, calc(100dvh - 40px));
+}
+
+.producer-modal__layout--text-only{
+  display: block;
+  min-height: 0;
+}
+
+.producer-modal__portrait{
+  min-height: 100%;
+  overflow: hidden;
+  background: #eaddea;
+  border-radius: 27px 0 0 27px;
+}
+
+.producer-modal__portrait img{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.producer-modal__content{
+  display: flex;
+  padding: clamp(42px, 5vw, 64px);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.producer-modal__layout--text-only .producer-modal__content{
+  padding: clamp(42px, 5vw, 64px);
 }
 
 .producer-modal__close{
@@ -5227,8 +5263,28 @@ body.producer-modal-open{
 
   .producer-modal__panel{
     max-height: calc(100dvh - 24px);
-    padding: 34px 24px;
     border-radius: 22px;
+  }
+
+  .producer-modal__layout{
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .producer-modal__portrait{
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 21px 21px 0 0;
+  }
+
+  .producer-modal__portrait img{
+    min-height: 0;
+    object-position: center 24%;
+  }
+
+  .producer-modal__content,
+  .producer-modal__layout--text-only .producer-modal__content{
+    padding: 34px 24px 30px;
   }
 }
 
@@ -6458,8 +6514,12 @@ body.producer-modal-open{
 
   .producer-modal__panel{
     max-height: calc(100dvh - 16px);
-    padding: 34px 22px calc(26px + env(safe-area-inset-bottom));
     border-radius: 22px;
+  }
+
+  .producer-modal__content,
+  .producer-modal__layout--text-only .producer-modal__content{
+    padding: 32px 22px calc(26px + env(safe-area-inset-bottom));
   }
 
   .producer-modal h2{

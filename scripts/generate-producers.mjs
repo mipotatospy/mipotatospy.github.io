@@ -184,6 +184,11 @@ const cards = publishedRecords.map(record => {
 }).join('\n');
 
 const dialogs = publishedRecords.map(record => {
+  const portrait = record.imagePath
+    ? `<div class="producer-modal__portrait">
+          <img src="${escapeHtml(normalizeImagePath(record.imagePath))}" alt="${escapeHtml(record.imageAlt)}" width="800" height="1000" loading="lazy">
+        </div>`
+    : '';
   const companies = record.companies.length
     ? `<div class="producer-modal__companies" aria-label="Companies">
 ${record.companies.map(company => company.url
@@ -210,9 +215,14 @@ ${record.companies.map(company => company.url
   return `    <dialog class="producer-modal" id="producer-${escapeHtml(record.id)}" aria-labelledby="producer-${escapeHtml(record.id)}-title">
       <div class="producer-modal__panel">
         <button class="producer-modal__close" type="button" data-producer-close aria-label="Close ${escapeHtml(record.displayName)} profile">×</button>
-        <h2 id="producer-${escapeHtml(record.id)}-title">${escapeHtml(record.displayName)}</h2>
-        ${companies}
-${socialSection}        ${biography}
+        <div class="producer-modal__layout${portrait ? '' : ' producer-modal__layout--text-only'}">
+          ${portrait}
+          <div class="producer-modal__content">
+            <h2 id="producer-${escapeHtml(record.id)}-title">${escapeHtml(record.displayName)}</h2>
+            ${companies}
+${socialSection}            ${biography}
+          </div>
+        </div>
       </div>
     </dialog>`;
 }).join('\n');
