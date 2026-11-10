@@ -658,8 +658,8 @@
     "displayName": "Isabella Paoloni",
     "companies": [
       {
-        "name": "Vinos Paoloni",
-        "url": ""
+        "name": "Villa Montefiori / Vinos Paoloni",
+        "url": "https://www.villamontefiori.mx/"
       }
     ],
     "linkedInUrl": "",
@@ -668,11 +668,11 @@
     "email": "",
     "personalBio": "",
     "companyBio": "",
-    "generalBio": "",
-    "imagePath": "",
-    "imageAlt": "",
+    "generalBio": "Isabella Paoloni is Commercial Manager at Villa Montefiori / Vinos Paoloni, a family-owned winery founded in 1997 in Mexico’s Valle de Guadalupe. She leads new-market development, commercial expansion, and distribution for Omaggio, one of the company’s principal wine lines. With a background in integrative clinical psychology, she seeks to connect the world of wine with gastronomy, culture, and sensory experiences, preserving her family’s legacy while developing new ways to bring wine closer to consumers.",
+    "imagePath": "assets/producers/isabella-paoloni.webp",
+    "imageAlt": "Portrait of Isabella Paoloni",
     "sortOrder": 31,
-    "published": false
+    "published": true
   },
   {
     "id": "diana-paoloni",
@@ -694,5 +694,26 @@
     "imageAlt": "",
     "sortOrder": 32,
     "published": false
+  },
+  {
+    "id": "marcela-landgrave",
+    "displayName": "Marcela Landgrave",
+    "companies": [
+      {
+        "name": "Tequila Las Mañanitas",
+        "url": "https://www.tequilalasmananitas.com/"
+      }
+    ],
+    "linkedInUrl": "https://mx.linkedin.com/in/marce-landgrave",
+    "instagramHandle": "",
+    "instagramUrl": "",
+    "email": "",
+    "personalBio": "",
+    "companyBio": "",
+    "generalBio": "Marcela Landgrave is a brand and business strategist, certified sommelier, and specialist in gastronomic design, with experience across the hospitality, luxury, tourism, and premium beverage sectors. She has developed brand-positioning strategies and gastronomic and cultural experiences for private and corporate clients. Her projects include creating the identity of Tequila Las Mañanitas, a brand awarded gold medals at WTA Latam and Virtus 2026.",
+    "imagePath": "assets/producers/marcela-landgrave.webp",
+    "imageAlt": "Portrait of Marcela Landgrave",
+    "sortOrder": 33,
+    "published": true
   }
 ]
