@@ -163,7 +163,7 @@ if (duplicateIds.length) throw new Error(`Duplicate producer id: ${duplicateIds[
 
 const publishedRecords = records.filter(record => record.published);
 
-const cards = publishedRecords.map((record, index) => {
+const cards = publishedRecords.map(record => {
   const image = record.imagePath
     ? `<img class="producer-card__photo" src="${escapeHtml(normalizeImagePath(record.imagePath))}" alt="${escapeHtml(record.imageAlt)}" width="800" height="1000" loading="lazy">`
     : `<div class="producer-photo-placeholder" role="img" aria-label="Portrait forthcoming for ${escapeHtml(record.displayName)}"><span>Portrait forthcoming</span></div>`;
@@ -175,7 +175,6 @@ const cards = publishedRecords.map((record, index) => {
         <button class="producer-card__trigger" type="button" aria-haspopup="dialog" aria-controls="producer-${escapeHtml(record.id)}">
           ${image}
           <span class="producer-card__copy">
-            <span class="producer-card__index">${String(index + 1).padStart(2, '0')}</span>
             <span class="producer-card__name">${escapeHtml(record.displayName)}</span>
             <span class="producer-company">${companyNames}</span>
             <span class="producer-card__action">View profile <span aria-hidden="true">↗</span></span>
